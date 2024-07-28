@@ -8,12 +8,21 @@ export default async function Home() {
 
   return (
     <div>
-      <form action={actions.signIn}>
-        <Button type="submit">Sign IN!</Button>
-      </form>
-      <form action={actions.signOut}>
-        <Button type="submit">Sign OUT!</Button>
-      </form>
+      {!session?.user ? (
+        <>
+          <form action={actions.signInGithub}>
+            <Button type="submit">Sign IN w :github!</Button>
+          </form>
+
+          <form action={actions.signInFacebook}>
+            <Button type="submit">Sign IN w :facebook!</Button>
+          </form>
+        </>
+      ) : (
+        <form action={actions.signOut}>
+          <Button type="submit">Sign OUT!</Button>
+        </form>
+      )}
 
       {session?.user ? (
         <div>Signed IN {JSON.stringify(session.user)}</div>
