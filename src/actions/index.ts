@@ -8,7 +8,3 @@ export async function signInGithub() {
 export async function signOut() {
   return auth.signOut();
 }
-
-export async function signInFacebook(){
-  return auth.signIn('facebook')
-}

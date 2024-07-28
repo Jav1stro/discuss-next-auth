@@ -13,10 +13,6 @@ export default async function Home() {
           <form action={actions.signInGithub}>
             <Button type="submit">Sign IN w :github!</Button>
           </form>
-
-          <form action={actions.signInFacebook}>
-            <Button type="submit">Sign IN w :facebook!</Button>
-          </form>
         </>
       ) : (
         <form action={actions.signOut}>
