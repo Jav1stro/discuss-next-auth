@@ -27,6 +27,15 @@ Resolver desafíos de caché UPFRONT:
    Manejamos las funciones de next auth como server actions para tener un mejor control y organizacion del proyecto.
 
 **Initial Design**
-![initialDesign](./architecture/initialDesign.png)
- 6. Identificar todas las rutas que nuestra aplicación va a tener y como va a funcionar la data 
- 7. Creación de PATH HELPERS.
+![initialDesign](./architecture/initialDesign.png) 
+6. Identificar todas las rutas que nuestra aplicación va a tener y como va a funcionar la data 
+7. Creación de PATH HELPERS.
+
+8. Creación de carpetas y pages.tsx de las rutas y pensar qué actions van a suceder por archivo.
+
+9. Separación de actions por archivo.
+
+10. Al correr npm run build vemos si las rutas son statics o dynamics. Si queremos saber si un archivo es dynamico:
+    ![what-makes-a-page-dynamic](./architecture/dynamic.png)
+Buscamos tener paginas statics que carguen más rapidamente.
+En el caso del Header, al hacer llamar desde el componente del servidor el estado de autentificacion con un useAuth(), haciendo cambios en las cookies, se convertía en una pagina dinamica el Home (desde donde se llama). En cambio, si cambiamos dentro del header esa parte y lo llevamos a un client component donde se resuelva el estado de la autentificacion con un useSession(), el Home pasa a ser static.
