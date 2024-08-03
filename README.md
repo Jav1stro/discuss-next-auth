@@ -39,3 +39,10 @@ Resolver desafíos de caché UPFRONT:
     ![what-makes-a-page-dynamic](./architecture/dynamic.png)
 Buscamos tener paginas statics que carguen más rapidamente.
 En el caso del Header, al hacer llamar desde el componente del servidor el estado de autentificacion con un useAuth(), haciendo cambios en las cookies, se convertía en una pagina dinamica el Home (desde donde se llama). En cambio, si cambiamos dentro del header esa parte y lo llevamos a un client component donde se resuelva el estado de la autentificacion con un useSession(), el Home pasa a ser static.
+
+
+
+**FORM VALIDATIONS IN SERVER ACTIONS. W USESFORMTATE AND ZOD**
+11. Las validaciones de los form van a estar en los SERVER ACTIONS
+12. Con ZOD se crean schemas para hacer las validaciones de lo sformularios
+13. useFormState para devolver esos errores
