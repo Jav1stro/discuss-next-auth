@@ -74,8 +74,8 @@ export async function createTopic(
       };
     }
   }
-  
-  console.log('Topic created!:', topic)
+
+  console.log("Topic created!:", topic);
   revalidatePath("/");
   redirect(paths.topicShow(topic.slug));
 }
