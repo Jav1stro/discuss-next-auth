@@ -42,3 +42,9 @@ Resolver desafíos de caché UPFRONT:
 
 **Fetch data in parent component or in child component** 14. Hacer el fetch de la data en el componente padre o en el componente hijo? Se puede resolver especificando qué datos queremos obtener dentro de nuestros padres, pero luego realmente ejecutar la query en el componente hijo. Entonces, el componente padre decide qué data fetchear y el componente hijo lo hace.
 ![parent-component-what-to-fetch](./architecture/fetchDataParent.png)
+
+
+**NO HACER PETICIONES QUERY DUPLICADAS A BD**
+11. Solución para no hacer un montón de peticiones duplicadas a la base de datos: 
+ ~Request Memoization Cache: Las solicitudes a la base de datos que sean iguales se guardan en caché para no repetirse.
+ En esta aplicación , la funcion fetchCommentsByPostId se ejecutaba varias veces demás. Al memoizarla la funcion con el mismo postId se ejecuta una sola vez: export const fetchCommentsByPostId = cache((postId)=>...) . Mientras el argumento sea identico, no se duplicaran las llamadas. En otras palabras, la función real sólo se va a ejecutar una sola vez, y luego el resultado de esa llamada será enviado de vuelta a todos nuestros diferentes componentes que llamaron a buscar comentarios por postId.
