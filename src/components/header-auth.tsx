@@ -21,7 +21,7 @@ export default function HeaderAuth() {
   let authContent: React.ReactNode;
 
   if (session.status === "loading") {
-    authContent = null;
+    authContent = 'Loading...';
   } else if (session.data?.user) {
     authContent = (
       <Popover placement="left">

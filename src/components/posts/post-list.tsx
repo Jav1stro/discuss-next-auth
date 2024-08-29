@@ -11,7 +11,7 @@ export default async function PostList({ fetchData }: PostListProps) {
   const posts = await fetchData();
 
   const renderedPosts = posts.map((post) => {
-    const topicSlug = post.topic.slug;
+  const topicSlug = post.topic.slug;
 
     if (!topicSlug) {
       throw new Error("Need a slug to link to a post");

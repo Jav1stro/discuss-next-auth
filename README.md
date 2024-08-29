@@ -48,3 +48,5 @@ Resolver desafíos de caché UPFRONT:
 11. Solución para no hacer un montón de peticiones duplicadas a la base de datos: 
  ~Request Memoization Cache: Las solicitudes a la base de datos que sean iguales se guardan en caché para no repetirse.
  En esta aplicación , la funcion fetchCommentsByPostId se ejecutaba varias veces demás. Al memoizarla la funcion con el mismo postId se ejecuta una sola vez: export const fetchCommentsByPostId = cache((postId)=>...) . Mientras el argumento sea identico, no se duplicaran las llamadas. En otras palabras, la función real sólo se va a ejecutar una sola vez, y luego el resultado de esa llamada será enviado de vuelta a todos nuestros diferentes componentes que llamaron a buscar comentarios por postId.
+
+ 12. Componente SUSPENSE de react: permite mostrar el contenido del padre mientras los hijos estan obteniendo datos lo que hace facil de implementar loading spinners.
